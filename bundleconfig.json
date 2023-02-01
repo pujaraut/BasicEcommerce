@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "client/dist/client/main.1080ad1e11ca43b129d4.min.js",
+    "inputFiles": [
+      "client/dist/client/main.1080ad1e11ca43b129d4.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/client/main.15401397c3a84c42fc48.min.js",
+    "inputFiles": [
+      "wwwroot/client/main.15401397c3a84c42fc48.js"
+    ]
+  }
+]

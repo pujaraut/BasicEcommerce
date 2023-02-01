@@ -1,0 +1,56 @@
+﻿<h3>cart</h3>
+<div>count:{{store.order.items.length}}</div>
+<table class="table table-condensed table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of store.order.items">
+
+            <td>
+                <img :src="/img/{{item.productArtId}}.jpg" alt="{{item.productArtist}}"
+                     class="img-fluid product-thumb" />
+            </td>
+            <td>{{item.productCategory}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.unitPrice | currency}}</td>
+            <!--if(item.unitPrice && item.quantity)
+    {
+    return item.unitPrice * item.quantity;
+    }
+    else
+    {
+    return not found;
+    }-->
+            
+            <!--if (item.unitPrice && item.quantity == null)
+    {
+    <td>{{item.unitPrice*item.quantity}}</td>
+    }-->
+            <!--else
+    {
+    Some thing wrong
+    }-->
+
+
+            <td *ngIf="item.unitPrice && item.quantity">
+                {{item.unitPrice*item.quantity | currency}}
+            </td>
+
+        </tr>
+        </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5"><strong>Subtotal: {{store.order.subtotal | currency}}</strong></td>
+            </tr>
+        </tfoot>
+</table>
+<a class="btn btn-success" *ngIf="store.order.items.length > 0" routerLink="checkout">checkout</a>
+<hr />
+ 

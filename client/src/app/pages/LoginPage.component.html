@@ -1,0 +1,63 @@
+﻿<!--<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+        <form (submit)="onLogin()"> 
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="creds.username" required />
+                <div class="text-danger" *ngIf="username.touched && username.errors && username.errors['required']">Required</div>
+                <div *ngIf="username.controls['username'].invalid && username.controls['username'].touched" class="text-danger">
+                    <div *ngIf="username.controls['username'].errors.required">
+                        Username required.
+                    </div>
+                </div>
+
+                <input type="text" class="form-control"  name="username"  #username="ngModel" [(ngModel)]="creds.username" required />
+                <span *ngIf="username.invalid && username.touched" class="alert alert-danger">Username field is required</span>
+
+
+            </div> 
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="creds.password" required />
+                <span *ngIf="password.invalid && password.touched" class="alert alert-danger">Password field is required</span>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Login" [disabled]="username.invalid || password.invalid" />
+                <input type="submit" class="btn btn-success" value="Login" />
+                <a href="#" class="btn btn-default">Cancle</a>
+            </div>
+        </form>
+        {{creds | json}}
+    </div>
+    </div>-->
+
+
+<!--pluralsight code-->
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+        <form (submit)="onLogin()">
+            <div class="form-group">  
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="creds.username"/>
+                <div class="text-danger" *ngIf="username.touched && username.invalid && username.errors"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" #password="ngModel" [ngModel]="creds.password"/>
+                <div class="text-danger" *ngIf="password.touched && password.invalid && password.errors"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Login" [disabled]="username.invalid || password.invalid" />
+                <a href="#" class="btn btn-default">Cancel</a>
+            </div>
+        </form>
+        {{creds | json}}
+    </div>
+</div>
+

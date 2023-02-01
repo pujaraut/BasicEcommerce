@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Order>
+    <h1>Order</h1>
+    <p>Count: @Model.Count()</p>
+    <div class="row">
+        @foreach (var q in Model)
+        {
+            <div class="col-md-3">
+                <div class="border bg-light rounded p-1">
+                    <img src="~/img/@(q.Id).jpg" class="img-fluid" alt="@q.OrderDate" />
+                    <h3>@q.Id - @q.OrderNumber</h3>
+                    <ul>
+                        <li>Id: $@q.Id</li>
+                        <li>OrderDate: $@q.OrderDate</li>
+                        <li>OrderNumber: $@q.OrderNumber</li>
+                    </ul>
+                    <button id="buyButton" class="btn btn-primary">Order</button>
+                    </div>
+                </div>
+        }
+    </div>
